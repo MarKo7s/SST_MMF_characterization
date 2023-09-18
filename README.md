@@ -1,10 +1,10 @@
-# Arbitrary Coherence Length Source Multimode Fibre Characterization by Spatial State Tomography
+# Arbitrary Coherence Length Source, Multimode Fibre Characterization by Spatial State Tomography
 
 ## Intro
 
 Referenceless, arbitrary coherence source multimode fibre characterization using spatial state tomography. The modules contain functions to perform spatial state tompgrahy and retrieve the complete complex mode transmission matrix (MTM). Those functions are shown in the avaliable jupyter notebook examples.
 
-
+Complete description of the project published on wwww.blablabla.com
 
 ## How to use it
 
