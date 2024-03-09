@@ -1,9 +1,9 @@
 import sys
 import os
-import pathlib
-from pathlib import Path
-p = pathlib.Path(__file__).parent.parent
-path_to_module = p
+#import pathlib
+#from pathlib import Path
+#p = pathlib.Path(__file__).parent.parent
+#path_to_module = p
 
 from fibremodes import ModesGen as mg
 from fibremodes.ModesGen import overlaps

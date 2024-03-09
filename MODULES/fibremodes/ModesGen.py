@@ -2,19 +2,19 @@
 """
 Created on Fri Dec 11 13:31:47 2020
 
-Mode generation class
+Mode generation class - MODULE FOR SHARING
 
 @author: Marcos
 
 """
 import sys
-import pathlib
-p = pathlib.Path(__file__).parent
-path_to_module = p 
-sys.path.append(str(path_to_module))
+#import pathlib
+#p = pathlib.Path(__file__).parent
+#path_to_module = p 
+#sys.path.append(str(path_to_module))
 
 
-import mode_generation_core_library as mgcl
+from . import mode_generation_core_library as mgcl # . substitute all the above pathlib
 from numpy import *
 try:
     import cupy as cp
