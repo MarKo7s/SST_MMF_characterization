@@ -1,17 +1,21 @@
 # Broadband Control of Light through Complex Media via Autonomously Self-Referencing Transmission Matrix Characterisation
 
-[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21637820-blue)](https://doi.org/10.5281/zenodo.21637820)
+[DOI](https://doi.org/10.5281/zenodo.21637820)
 
 ## Intro
 
 Self-referenced, arbitrary coherence source multimode fibre characterization using spatial state tomography. The SST framework lives under `MODULES/`; the Jupyter notebooks at the repository root are end-to-end **examples** that call those modules to perform spatial state tomography and retrieve the complete complex mode transmission matrix (MTM).
 
-## Notebooks
+## Notebooks Examples:
 
-| Notebook | Needs experimental `.npy` data? | Description |
-|----------|----------------------------------|-------------|
-| `SST_MTM_retrival_example_simulation.ipynb` | No | End-to-end MTM retrieval on simulated data |
-| `SST_MTM_retrival_example_experimental.ipynb` | Yes | Retrieval on measured Stokes intensity sweeps |
+
+| Notebook                                      | Needs experimental `.npy` data? | Description                                   |
+| --------------------------------------------- | ------------------------------- | --------------------------------------------- |
+| `SST_MTM_retrival_example_simulation.ipynb`   | No                              | End-to-end MTM retrieval on simulated data    |
+| `SST_MTM_retrival_example_experimental.ipynb` | Yes                             | Retrieval on measured Stokes intensity sweeps |
+
+
+
 
 ## Repository structure
 
@@ -36,10 +40,12 @@ SST_MMF_characterization/
 └── README.md
 ```
 
-- **`MODULES/`** — the reusable SST / MTM characterisation framework.
+- `MODULES/` — the reusable SST / MTM characterisation framework.
 - **Root notebooks** — worked examples; they add `MODULES/` to `sys.path` and demonstrate the full pipeline.
-- **`experimental_data/`** — large `.npy` arrays (Git LFS; Zenodo fallback below).
-- **`SST_setup/`** — Stokes analyser projection pickle used by the experimental example.
+- `experimental_data/` — large `.npy` arrays (Git LFS; Zenodo fallback below).
+- `SST_setup/` — Stokes analyser projection pickle used by the experimental example.
+
+
 
 ## Install
 
@@ -52,6 +58,8 @@ Install once on your machine: [https://git-lfs.github.com](https://git-lfs.githu
 ```bash
 git lfs install
 ```
+
+
 
 ### 2. Clone the repository
 
@@ -122,6 +130,8 @@ experimental_data/030423_5_mode_groups_BW_40nm_1300nm_N_118_wav/
 SST_setup/StokesTomagraphySetUp_projections_1770.pkl
 ```
 
+
+
 ### 5. CPU vs GPU notebook flags
 
 Defaults assume a CUDA GPU (`GPU=True`, `engine='GPU'`) and are the recommended path for performance. On CPU-only machines (much slower):
@@ -133,4 +143,4 @@ Defaults assume a CUDA GPU (`GPU=True`, `engine='GPU'`) and are the recommended 
 
 ## Contact
 
-For more data availability and bug reports: m.maestremorote@uq.edu.au
+For more data availability and bug reports: [m.maestremorote@uq.edu.au](mailto:m.maestremorote@uq.edu.au)
