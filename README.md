@@ -1,10 +1,45 @@
 # Broadband Control of Light through Complex Media via Autonomously Self-Referencing Transmission Matrix Characterisation
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21637820.svg)](https://doi.org/10.5281/zenodo.21637820)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21637820-blue)](https://doi.org/10.5281/zenodo.21637820)
 
 ## Intro
 
-Self-referenced, arbitrary coherence source multimode fibre characterization using spatial state tomography. The modules contain functions to perform spatial state tomography and retrieve the complete complex mode transmission matrix (MTM). Those functions are shown in the available Jupyter notebook examples.
+Self-referenced, arbitrary coherence source multimode fibre characterization using spatial state tomography. The SST framework lives under `MODULES/`; the Jupyter notebooks at the repository root are end-to-end **examples** that call those modules to perform spatial state tomography and retrieve the complete complex mode transmission matrix (MTM).
+
+## Notebooks
+
+| Notebook | Needs experimental `.npy` data? | Description |
+|----------|----------------------------------|-------------|
+| `SST_MTM_retrival_example_simulation.ipynb` | No | End-to-end MTM retrieval on simulated data |
+| `SST_MTM_retrival_example_experimental.ipynb` | Yes | Retrieval on measured Stokes intensity sweeps |
+
+## Repository structure
+
+```
+SST_MMF_characterization/
+├── MODULES/                          # SST framework (importable library code)
+│   ├── stokes/                       # Tomography, MTM retrieval, analysis
+│   │   ├── stokestomography.py
+│   │   ├── retrivalMTM.py
+│   │   ├── processingTools.py
+│   │   ├── analyzefucTools.py
+│   │   └── PSD.py
+│   ├── fibremodes/                   # Mode basis and TM helpers
+│   │   ├── ModesGen.py
+│   │   ├── mode_generation_core_library.py
+│   │   └── transmission_matrix_generator.py
+│   └── custom_plotting.py
+├── SST_MTM_retrival_example_*.ipynb  # Example notebooks (use MODULES/)
+├── experimental_data/                # Measured intensities (Git LFS or Zenodo)
+├── SST_setup/                        # Analyser projection metadata
+├── environment.yml / requirements.txt
+└── README.md
+```
+
+- **`MODULES/`** — the reusable SST / MTM characterisation framework.
+- **Root notebooks** — worked examples; they add `MODULES/` to `sys.path` and demonstrate the full pipeline.
+- **`experimental_data/`** — large `.npy` arrays (Git LFS; Zenodo fallback below).
+- **`SST_setup/`** — Stokes analyser projection pickle used by the experimental example.
 
 ## Install
 
@@ -95,13 +130,6 @@ Defaults assume a CUDA GPU (`GPU=True`, `engine='GPU'`) and are the recommended 
 - Experimental notebook: `Stokes_Tomography_MTM_retrival(..., GPU=False)` (LG engine follows this flag)
 
 `multicore=True` with `engine='CPU'` requires `ipyparallel` and a running `ipcluster`.
-
-## Notebooks
-
-| Notebook | Needs experimental `.npy` data? | Description |
-|----------|----------------------------------|-------------|
-| `SST_MTM_retrival_example_simulation.ipynb` | No | End-to-end MTM retrieval on simulated data |
-| `SST_MTM_retrival_example_experimental.ipynb` | Yes | Retrieval on measured Stokes intensity sweeps |
 
 ## Contact
 
