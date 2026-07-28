@@ -16,7 +16,7 @@ from stokes.PSD import nearestSPSD_batch, nearestPSD_batch
 try:
     import cupy as cp
     cupy_available = True
-except ModeleNotFoundError:
+except ModuleNotFoundError:
     cupy_available = False
 
 def GellManMatrices(N):

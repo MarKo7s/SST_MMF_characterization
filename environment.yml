@@ -1,0 +1,16 @@
+name: sst-mmf
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - numpy
+  - scipy
+  - matplotlib
+  - numba
+  - numexpr
+  - jupyter
+  - ipykernel
+  - ipywidgets
+  - pip
+  - pip:
+      - einsumt

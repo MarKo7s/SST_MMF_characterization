@@ -1,0 +1,13 @@
+numpy
+scipy
+matplotlib
+numba
+numexpr
+einsumt
+jupyter
+ipykernel
+ipywidgets
+
+# Optional GPU (pick ONE matching your CUDA toolkit):
+# cupy-cuda12x
+# cupy-cuda11x

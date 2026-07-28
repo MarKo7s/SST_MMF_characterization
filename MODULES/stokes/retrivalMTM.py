@@ -55,7 +55,10 @@ class Stokes_Tomography_MTM_retrival:
         px = self.framesize
         Apx = 1
 
-        LGbases = mg.LGmodes(mfd,ng,px,Apx, generateModes = True, wholeSet = True, engine ='GPU', multicore = True) 
+        engine = 'GPU' if self.GPU_flag else 'CPU'
+        # multicore=True on CPU requires ipyparallel + a running ipcluster
+        multicore = True if self.GPU_flag else False
+        LGbases = mg.LGmodes(mfd,ng,px,Apx, generateModes = True, wholeSet = True, engine=engine, multicore=multicore) 
         mm_gra = LGbases.LGmodesArray__
         modesCount = mm_gra.shape[0]
 
