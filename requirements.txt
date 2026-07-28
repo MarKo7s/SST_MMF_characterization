@@ -7,7 +7,9 @@ einsumt
 jupyter
 ipykernel
 ipywidgets
+ipyparallel
 
-# Optional GPU (pick ONE matching your CUDA toolkit):
+# CuPy: pick ONE wheel matching your CUDA toolkit
+cupy-cuda13x
 # cupy-cuda12x
 # cupy-cuda11x

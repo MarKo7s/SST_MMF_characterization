@@ -467,7 +467,7 @@ def eval_genlaguerreGPU(p,l,x) :
     Xmatrix = cp.zeros( (maxK+1,x.shape[0],x.shape[1]), float )
     k = np.arange(0,maxK+1,1, int)
     k_gpu = cp.arange(0,maxK+1,1, int)
-    x_gpu = cp.asarray(x).astype(cp.float) #Argument of the LG function
+    x_gpu = cp.asarray(x).astype(cp.float64) #Argument of the LG function
     Xmatrix = cp.power( x_gpu, k_gpu[:,None,None] )  * cp.power((-1),k_gpu[:,None,None])
     Xmatrix.shape
     
@@ -479,7 +479,7 @@ def eval_genlaguerreGPU(p,l,x) :
         O[i,:] = Okernel(p,l,i)
     O[O == np.inf] = 0
     
-    O_gpu = cp.asarray(O).astype(cp.float)
+    O_gpu = cp.asarray(O).astype(cp.float64)
     
     #Mem checking
     meminfo = cp.cuda.Device(0).mem_info #Tuple (free,total)

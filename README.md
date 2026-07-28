@@ -1,5 +1,7 @@
 # Broadband Control of Light through Complex Media via Autonomously Self-Referencing Transmission Matrix Characterisation
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21637820.svg)](https://doi.org/10.5281/zenodo.21637820)
+
 ## Intro
 
 Self-referenced, arbitrary coherence source multimode fibre characterization using spatial state tomography. The modules contain functions to perform spatial state tomography and retrieve the complete complex mode transmission matrix (MTM). Those functions are shown in the available Jupyter notebook examples.
@@ -47,12 +49,13 @@ Or with pip:
 pip install -r requirements.txt
 ```
 
-Core packages: `numpy`, `scipy`, `matplotlib`, `numba`, `numexpr`, `einsumt`, Jupyter / `ipywidgets`.
+Core packages: `numpy`, `scipy`, `matplotlib`, `numba`, `numexpr`, `einsumt`, Jupyter / `ipywidgets`, `ipyparallel`.
 
-Optional GPU (pick one wheel matching your CUDA toolkit):
+**GPU (CuPy) is required for practical runtimes** of the example notebooks. Install the wheel that matches your CUDA toolkit (defaults in `environment.yml` / `requirements.txt` use CUDA 13.x for this lab setup):
 
 ```bash
-pip install cupy-cuda12x
+pip install cupy-cuda13x
+# or: pip install cupy-cuda12x
 # or: pip install cupy-cuda11x
 ```
 
@@ -76,7 +79,7 @@ Get-Item .\experimental_data\030423_5_mode_groups_BW_40nm_1300nm_N_118_wav\BW_0n
 python -c "import numpy as np; a=np.load(r'experimental_data/030423_5_mode_groups_BW_40nm_1300nm_N_118_wav/BW_0nm/V_0_0.npy'); print(a.shape, a.dtype)"
 ```
 
-**If Git LFS fails** (quota, missing LFS client, or Download ZIP): download the experimental dataset from **Zenodo** (DOI: *TBD — deposit coming soon*), unpack it at the repository root so paths match:
+**If Git LFS fails** (quota, missing LFS client, or Download ZIP): download the experimental dataset from Zenodo ([DOI: 10.5281/zenodo.21637820](https://doi.org/10.5281/zenodo.21637820)), unpack `experimental_data.zip` at the repository root so paths match:
 
 ```
 experimental_data/030423_5_mode_groups_BW_40nm_1300nm_N_118_wav/
@@ -84,11 +87,9 @@ experimental_data/030423_5_mode_groups_BW_40nm_1300nm_N_118_wav/
 SST_setup/StokesTomagraphySetUp_projections_1770.pkl
 ```
 
-Until the Zenodo record is published, contact the maintainer below for an alternate copy.
-
 ### 5. CPU vs GPU notebook flags
 
-Defaults assume a CUDA GPU (`GPU=True`, `engine='GPU'`). On CPU-only machines:
+Defaults assume a CUDA GPU (`GPU=True`, `engine='GPU'`) and are the recommended path for performance. On CPU-only machines (much slower):
 
 - Simulation notebook: `engine='CPU', multicore=False` for `LGmodes`, and `StokesVectorCalc(..., GPU=False)`
 - Experimental notebook: `Stokes_Tomography_MTM_retrival(..., GPU=False)` (LG engine follows this flag)

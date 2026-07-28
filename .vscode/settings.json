@@ -1,0 +1,4 @@
+{
+  "python.analysis.extraPaths": ["MODULES"],
+  "python.autoComplete.extraPaths": ["MODULES"]
+}

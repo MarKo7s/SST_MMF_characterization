@@ -11,6 +11,11 @@ dependencies:
   - jupyter
   - ipykernel
   - ipywidgets
+  - ipyparallel
   - pip
   - pip:
       - einsumt
+      # Pick ONE CuPy wheel matching your CUDA (this machine: CUDA 13.x)
+      - cupy-cuda13x
+      # - cupy-cuda12x
+      # - cupy-cuda11x
