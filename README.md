@@ -8,7 +8,33 @@ Self-referenced, arbitrary coherence source multimode fibre characterization usi
 
 This repository is self-contained. Custom packages live under `MODULES/`. Large experimental arrays (`.npy`) are stored with **Git LFS**. If LFS is unavailable, use the Zenodo dataset path below.
 
-### 1. Environment (Conda recommended)
+### 1. Install Git LFS
+
+Install once on your machine: [https://git-lfs.github.com](https://git-lfs.github.com)
+
+```bash
+git lfs install
+```
+
+### 2. Clone the repository
+
+```bash
+git clone https://github.com/MarKo7s/SST_MMF_characterization.git
+cd SST_MMF_characterization
+```
+
+If you already cloned without LFS, fetch the large files from the repo root:
+
+```bash
+git lfs install
+git lfs pull
+```
+
+Do **not** use GitHub’s “Download ZIP” for the experimental `.npy` files: that archive contains only LFS pointer stubs.
+
+### 3. Environment (Conda recommended)
+
+From the repository root:
 
 ```bash
 conda env create -f environment.yml
@@ -38,33 +64,9 @@ python -m ipykernel install --user --name sst-mmf --display-name "Python (sst-mm
 
 The notebooks add `MODULES/` to `sys.path` automatically.
 
-### 2. Install Git LFS
-
-Install once on your machine: [https://git-lfs.github.com](https://git-lfs.github.com)
-
-```bash
-git lfs install
-```
-
-### 3. Clone the repository
-
-```bash
-git clone https://github.com/MarKo7s/SST_MMF_characterization.git
-cd SST_MMF_characterization
-```
-
-If you already cloned without LFS:
-
-```bash
-git lfs install
-git lfs pull
-```
-
-Do **not** use GitHub’s “Download ZIP” for the experimental `.npy` files: that archive contains only LFS pointer stubs.
-
 ### 4. Experimental data (LFS or Zenodo)
 
-**Preferred:** after a successful `git lfs pull`, each intensity file should be about **111 MB**.
+**Preferred:** after a successful clone / `git lfs pull`, each intensity file should be about **111 MB**.
 
 ```bash
 # PowerShell
