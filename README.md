@@ -1,6 +1,7 @@
 # Broadband Control of Light through Complex Media via Autonomously Self-Referencing Transmission Matrix Characterisation
 
-**Version:** [0.1.0](https://github.com/MarKo7s/SST_MMF_characterization/releases/tag/v0.1.0) (arXiv snapshot) · **Dataset DOI:** [10.5281/zenodo.21637820](https://doi.org/10.5281/zenodo.21637820)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21637820-blue)](https://doi.org/10.5281/zenodo.21637820)
+[![Release](https://img.shields.io/badge/release-v0.1.0-green)](https://github.com/MarKo7s/SST_MMF_characterization/releases/tag/v0.1.0)
 
 ## Intro
 
