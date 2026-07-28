@@ -1,6 +1,6 @@
 # Broadband Control of Light through Complex Media via Autonomously Self-Referencing Transmission Matrix Characterisation
 
-[DOI](https://doi.org/10.5281/zenodo.21637820)
+**Version:** [0.1.0](https://github.com/MarKo7s/SST_MMF_characterization/releases/tag/v0.1.0) (arXiv snapshot) · **Dataset DOI:** [10.5281/zenodo.21637820](https://doi.org/10.5281/zenodo.21637820)
 
 ## Intro
 
@@ -140,6 +140,10 @@ Defaults assume a CUDA GPU (`GPU=True`, `engine='GPU'`) and are the recommended 
 - Experimental notebook: `Stokes_Tomography_MTM_retrival(..., GPU=False)` (LG engine follows this flag)
 
 `multicore=True` with `engine='CPU'` requires `ipyparallel` and a running `ipcluster`.
+
+## Versioning
+
+This repository is tagged for manuscript snapshots. **`v0.1.0`** is the arXiv-associated release; later tags (e.g. `v0.2.0`) may follow journal revisions. Prefer a release tag over an untagged `main` tip when citing the code.
 
 ## Contact
 
